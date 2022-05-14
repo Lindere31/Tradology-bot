@@ -36,3 +36,16 @@ client.login(process.env.DISCORD_TOKEN);
 //Lancer le bot (pm2 start .\index.js (/reload pour relancer))
 //Lancer le bot pour dev (pm2 start .\index.js --watch(relance le bot a chaque changement dans le script))
 //Voir les log du bot (pm2 log [numero app, ex: 0])
+
+//Heroku & gitHub:
+//Mettre a jour gitHub:
+//git add .
+//git commit -m "Nom du changement"
+//git Push
+//Mettre a jour heroku:
+//git push heroku main
+
+//Voir le nombre d'heure restante sur heroku:
+//heroku ps
+
+//https://kaffeine.herokuapp.com/ pour ping l'app toute les 30min pour ne pas quell se mette en veille

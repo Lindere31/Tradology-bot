@@ -39,6 +39,6 @@ module.exports = {
         .setTimestamp()
         .setFooter({ text: interaction.user.username, iconURL: interaction.user.displayAvatarURL() })
 
-        interaction.editReply({ content: ' ', embeds: [embed] })
+        tryEco.editReply({ content: ' ', embeds: [embed] })
     },
 };
