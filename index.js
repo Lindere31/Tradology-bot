@@ -33,7 +33,7 @@ mongoose.connect(process.env.DATABASE_URI, {
 
 client.login(process.env.DISCORD_TOKEN); 
 
-//Lancer le bot (pm2 start .\index.js (/reload pour relancer))
+//Lancer le bot (pm2 start .\index.js (/reload sur discord pour relancer))
 //Lancer le bot pour dev (pm2 start .\index.js --watch(relance le bot a chaque changement dans le script))
 //Voir les log du bot (pm2 log [numero app, ex: 0])
 
