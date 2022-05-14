@@ -41,7 +41,7 @@ client.login(process.env.DISCORD_TOKEN);
 //Mettre a jour gitHub:
 //git add .
 //git commit -m "Nom du changement"
-//git Push
+//git push
 //Mettre a jour heroku:
 //git push heroku main
 

@@ -32,5 +32,27 @@ module.exports = {
 
         //await file.delete('../../economicCalendar.png');
     },
-    async runInteraction(client, interaction) {},
+    async runInteraction(client, interaction) {
+        await captureWebsite.file('https://sslecal2.investing.com', 'economicCalendar.png');
+        const image = new MessageAttachment('././economicCalendar.png');
+
+        const tryEco = await interaction.channel.send('Les annonce arrive... un instant!');
+
+        const embed = new MessageEmbed()
+        .setTitle('Calendrier économique')
+        .setURL('https://fr.investing.com/economic-calendar/')
+        .setThumbnail('https://play-lh.googleusercontent.com/uNHZPzlEIW80CqUWsw9r-7gCBIeMRQWjNeLFVO8ulZakOH8FcUjgDj3wagQZGxMvu0s=w240-h480')
+        .setImage('attachment://economicCalendar.png')
+        .addFields(
+            {name: 'Uptime', value: `<t:${parseInt(client.readyTimestamp / 1000)}:R>`},
+            {name: 'Latence API', value: `\`\`\`${client.ws.ping}ms\`\`\``, inline: true},
+            {name: 'Latence BOT', value: `\`\`\`${tryEco.createdTimestamp - interaction.createdTimestamp}ms\`\`\``, inline: true},
+        )
+        .setTimestamp()
+        .setFooter({ text: interaction.user.username, iconURL: interaction.user.displayAvatarURL() })
+
+        await tryEco.edit({ embeds: [embed], files: [image] });
+
+        //await file.delete('../../economicCalendar.png');
+    },
 };

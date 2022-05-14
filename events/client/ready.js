@@ -12,10 +12,10 @@ module.exports = {
         client.user.setPresence({ activities: [{ name: 'to TRADOLOGY', type: 'LISTENING' }], status: 'online' });
 
         // /commands Local (Modification = instantané)       (ID Serveur)
-        //const devGuild = await client.guilds.cache.get('817431077387370507');
-        //devGuild.commands.set(client.commands.map(cmd => cmd));
+        const devGuild = await client.guilds.cache.get('817431077387370507');
+        devGuild.commands.set(client.commands.map(cmd => cmd));
 
         // /commands Global (Modification = 1h)
-        client.application.commands.set(client.commands.map(cmd => cmd));
+        //client.application.commands.set(client.commands.map(cmd => cmd));
      },
 };
