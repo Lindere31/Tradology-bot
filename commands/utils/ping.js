@@ -25,7 +25,7 @@ module.exports = {
         tryEco.edit({ content: ' ', embeds: [embed] });
     },
     async runInteraction(client, interaction) {
-        const tryEco = await interaction.reply({ content: 'Les annonce arrive... un instant!', fetchReply: true });
+        const tryEco = await interaction.reply({ content: 'Le ping arrive... un instant!', fetchReply: true });
 
         const embed = new MessageEmbed()
         .setTitle('🏓 Pong')

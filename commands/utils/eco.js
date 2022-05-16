@@ -11,25 +11,25 @@ module.exports = {
     examples: ['eco ou /eco'],
     description: 'La commande eco envoie les annonces economique',
     async run(client, message, args) {
-        await captureWebsite.file('https://sslecal2.investing.com', 'economicCalendar.png');
-        const image = new MessageAttachment('././economicCalendar.png');
+      const tryEco = await message.channel.send('Les annonce arrive... un instant!');
 
-        const tryEco = await message.channel.send('Les annonce arrive... un instant!');
+        await captureWebsite.file("https://www.financialjuice.com/widgets/ecocal.aspx?", "economicCalendar.png");
+        const image = new MessageAttachment('././economicCalendar.png');
 
         const embed = new MessageEmbed()
         .setTitle('Calendrier économique')
         .setURL('https://fr.investing.com/economic-calendar/')
-        .setThumbnail('https://play-lh.googleusercontent.com/uNHZPzlEIW80CqUWsw9r-7gCBIeMRQWjNeLFVO8ulZakOH8FcUjgDj3wagQZGxMvu0s=w240-h480')
+        .setThumbnail('https://i.ibb.co/kBTFVL2/financialjuice-logo.png')
         .setImage('attachment://economicCalendar.png')
         .addFields(
             {name: 'Uptime', value: `<t:${parseInt(client.readyTimestamp / 1000)}:R>`},
-            {name: 'Latence API', value: `\`\`\`${client.ws.ping}ms\`\`\``, inline: true},
-            {name: 'Latence BOT', value: `\`\`\`${tryEco.createdTimestamp - message.createdTimestamp}ms\`\`\``, inline: true},
+            //{name: 'Latence API', value: `\`\`\`${client.ws.ping}ms\`\`\``, inline: true},
+            //{name: 'Latence BOT', value: `\`\`\`${tryEco.createdTimestamp - message.createdTimestamp}ms\`\`\``, inline: true},
         )
         .setTimestamp()
         .setFooter({ text: message.author.username, iconURL: message.author.displayAvatarURL() })
 
-        await tryEco.edit({ embeds: [embed], files: [image] });
+        await tryEco.edit({ content: ' ', embeds: [embed], files: [image] });
 
         const path = '././economicCalendar.png'
         try {
@@ -40,25 +40,25 @@ module.exports = {
           };
     },
     async runInteraction(client, interaction) {
-        await captureWebsite.file('https://sslecal2.investing.com', 'economicCalendar.png');
-        const image = new MessageAttachment('././economicCalendar.png');
+      const tryEco = await interaction.reply('Les annonce arrive... un instant!');
 
-        const tryEco = await interaction.channel.send('Les annonce arrive... un instant!');
+        await captureWebsite.file('https://www.financialjuice.com/widgets/ecocal.aspx?', 'economicCalendar.png');
+        const image = new MessageAttachment('././economicCalendar.png');
 
         const embed = new MessageEmbed()
         .setTitle('Calendrier économique')
         .setURL('https://fr.investing.com/economic-calendar/')
-        .setThumbnail('https://play-lh.googleusercontent.com/uNHZPzlEIW80CqUWsw9r-7gCBIeMRQWjNeLFVO8ulZakOH8FcUjgDj3wagQZGxMvu0s=w240-h480')
+        .setThumbnail('https://i.ibb.co/kBTFVL2/financialjuice-logo.png')
         .setImage('attachment://economicCalendar.png')
         .addFields(
             {name: 'Uptime', value: `<t:${parseInt(client.readyTimestamp / 1000)}:R>`},
-            {name: 'Latence API', value: `\`\`\`${client.ws.ping}ms\`\`\``, inline: true},
-            {name: 'Latence BOT', value: `\`\`\`${tryEco.createdTimestamp - interaction.createdTimestamp}ms\`\`\``, inline: true},
+            //{name: 'Latence API', value: `\`\`\`${client.ws.ping}ms\`\`\``, inline: true},
+            //{name: 'Latence BOT', value: `\`\`\`${tryEco.createdTimestamp - interaction.createdTimestamp}ms\`\`\``, inline: true},
         )
         .setTimestamp()
         .setFooter({ text: interaction.user.username, iconURL: interaction.user.displayAvatarURL() })
 
-        await tryEco.edit({ embeds: [embed], files: [image] });
+        await interaction.editReply({ content: ' ', embeds: [embed], files: [image] });
 
         const path = '././economicCalendar.png'
         try {
