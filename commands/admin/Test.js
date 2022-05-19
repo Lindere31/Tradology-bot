@@ -13,13 +13,13 @@ const items = [
 ];
 
 module.exports = {
-    name: 'eco',
-    category: 'utils',
+    name: 'test',
+    category: 'admin',
     permissions: ['SEND_MESSAGES'],
-    ownerOnly: false,
-    usage: 'eco ou /eco',
-    examples: ['eco ou /eco'],
-    description: 'La commande eco envoie les annonces economique',
+    ownerOnly: true,
+    usage: 'test ou /test',
+    examples: ['test ou /test'],
+    description: 'La commande test envoie une commande test',
     async run(client, message) {
       const tryEco = await message.channel.send('Les annonce arrive... un instant!');
 
