@@ -9,6 +9,7 @@ module.exports = {
     examples: ['sondage', 'sondage Live se soir ? ou /sondage [titre] Live se soir ? [contenu] oui ou non'],
     description: 'Poster votre propre sondage!',
     async run(client, message, args) {
+        if (message.author.bot) return;
         if (!args[0]) return message.reply("Merci d'entrer une question pour votre sondage!");
 
         const embed = new MessageEmbed()

@@ -29,6 +29,7 @@ module.exports = {
     examples: ['welcome ou /welcome'],
     description: 'La commande welcome permet d\'envoyer l\'embed des règles',
     async run(client, message, args) {
+        if (message.author.bot) return;
         await message.channel.send({ embeds: [welcomeEmbed], components: [buttons] });
     },
     async runInteraction(client, interaction) {

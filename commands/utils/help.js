@@ -15,6 +15,7 @@ module.exports = {
     examples: ['help, !help eco, !help sondage ou /help, /help eco, /help sondage'],
     description: "Renvoie une liste de commande filtrée par catégorie!",
     async run(client, message, args, guildSettings) {
+        if (message.author.bot) return;
         const prefix = guildSettings.prefix;
 
         if (!args.length) {

@@ -7,6 +7,7 @@ module.exports = {
     examples: ['emoji'],
     description: 'Poster vos emoji!',
     async run(client, message, args) {
+        if (message.author.bot) return;
         const emoji = await message.reply('Emoji');
         await emoji.react(`🟥`);
         await emoji.react(`🟩`);

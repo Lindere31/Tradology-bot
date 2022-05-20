@@ -39,6 +39,7 @@ module.exports = {
     examples: ['roles ou /roles'],
     description: 'Choisir un roles',
     async run(client, message, args) {
+        if (message.author.bot) return;
         await message.channel.send({ content: 'Choisir un ou plusieurs rôles', components: [selectMenu] });
     },
     async runInteraction(client, interaction) {

@@ -7,6 +7,7 @@ module.exports = {
     examples: ['collector ou /collector'],
     description: 'collector',
     async run(client, message, args) {
+        if (message.author.bot) return;
         const filter = (reaction, user) => {
             return reaction.emoji.name === '❌' && user.id === message.author.id;
         };

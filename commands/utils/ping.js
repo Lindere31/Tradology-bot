@@ -9,6 +9,7 @@ module.exports = {
     examples: ['ping ou /ping'],
     description: 'La commande ping affiche la latence du bot est de l\'API',
     async run(client, message, args) {
+        if (message.author.bot) return;
         const tryEco = await message.channel.send('Le ping arrive... un instant!');
 
         const embed = new MessageEmbed()

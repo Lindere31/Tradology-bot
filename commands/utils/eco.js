@@ -3,12 +3,12 @@ const captureWebsite = require('capture-website');
 const fs = require('fs')
 
 const options = {
-	width: 700,
-	height: 700
+	width: 600,
+	height: 600
 };
 
 const items = [
-	['https://www.financialjuice.com/widgets/ecocal.aspx?wtype=ECOCAL&mode=table&container=financialjuice-eco-widget-container&width=700px&height=600px&backC=1e222d&fontC=b2b5be&preview=true', 'economicCalendar'],
+	['https://www.financialjuice.com/widgets/ecocal.aspx?wtype=ECOCAL&mode=table&container=financialjuice-eco-widget-container&width=600px&height=600px&backC=1e222d&fontC=b2b5be&preview=true', 'economicCalendar'],
 	//['https://github.com', 'github'],    //Plusieurs captures d'écran possible.
 ];
 
@@ -30,7 +30,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
         .setTitle('Calendrier économique')
-        .setURL('https://fr.investing.com/economic-calendar/')
+        .setURL('https://www.financialjuice.com/home')
         .setThumbnail('https://i.ibb.co/kBTFVL2/financialjuice-logo.png')
         .setImage('attachment://economicCalendar.png')
         .addFields(
@@ -61,7 +61,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
         .setTitle('Calendrier économique')
-        .setURL('https://fr.investing.com/economic-calendar/')
+        .setURL('https://www.financialjuice.com/home')
         .setThumbnail('https://i.ibb.co/kBTFVL2/financialjuice-logo.png')
         .setImage('attachment://economicCalendar.png')
         .addFields(
