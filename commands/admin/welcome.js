@@ -22,9 +22,9 @@ const welcomeEmbed = new MessageEmbed()
 
 module.exports = {
     name: 'welcome',
-    category: 'utils',
-    permissions: ['ADMINISTRATOR'],
-    ownerOnly: false,
+    category: 'admin',
+    permissions: ['SEND_MESSAGES'],
+    ownerOnly: true,
     usage: 'welcome ou /welcome',
     examples: ['welcome ou /welcome'],
     description: 'La commande welcome permet d\'envoyer l\'embed des règles',

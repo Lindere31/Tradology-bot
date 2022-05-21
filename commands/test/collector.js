@@ -1,6 +1,6 @@
 module.exports = {
     name: 'collector',
-    category: 'utils',
+    category: 'test',
     permissions: ['SEND_MESSAGES'],
     ownerOnly: false,
     usage: 'collector ou /collector',

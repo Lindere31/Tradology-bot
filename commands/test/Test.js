@@ -13,13 +13,13 @@ const items = [
 ];
 
 module.exports = {
-  name: 'autoeco',
-  category: 'admin',
+  name: 'test',
+  category: 'test',
   permissions: ['SEND_MESSAGES'],
   ownerOnly: true,
-  usage: ' /autoeco',
-  examples: [' /autoeco'],
-  description: 'Activée/Désactivée l\'envoie automatique du calendrier économique',
+  usage: 'test ou /test',
+  examples: ['test ou /test'],
+  description: 'La commande test envoie une commande test',
   
   options: [
     {
@@ -69,11 +69,11 @@ module.exports = {
             console.error(err)
           };
         }, checkthe_interval);
-        await testChannel.send({ content: 'L\'envoie automatique du calendrier économique est activé' });
+        await testChannel.send({ content: 'Le mode auto de la commande eco est activé' });
         
     } else if (evtChoices == 'Off') {
       clearInterval(Auto);
-      await testChannel.send({ content: 'L\'envoie automatique du calendrier économique est désactivé' });
+      await testChannel.send({ content: 'Le mode auto de la commande eco est désactivé' });
     }
   }
 };

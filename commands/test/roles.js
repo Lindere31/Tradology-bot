@@ -32,7 +32,7 @@ const selectMenu = new MessageActionRow()
 
 module.exports = {
     name: 'roles',
-    category: 'utils',
+    category: 'test',
     permissions: ['SEND_MESSAGES'],
     ownerOnly: false,
     usage: 'roles ou /roles',

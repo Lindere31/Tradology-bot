@@ -34,10 +34,10 @@ module.exports = {
         .setThumbnail('https://i.ibb.co/kBTFVL2/financialjuice-logo.png')
         .setImage('attachment://economicCalendar.png')
         .addFields(
-            {name: 'Uptime', value: `<t:${parseInt(client.readyTimestamp / 1000)}:R>`},
-            //{name: 'Latence API', value: `\`\`\`${client.ws.ping}ms\`\`\``, inline: true},
-            //{name: 'Latence BOT', value: `\`\`\`${tryEco.createdTimestamp - message.createdTimestamp}ms\`\`\``, inline: true},
-        )
+          {name: 'Uptime', value: `<t:${parseInt(client.readyTimestamp / 1000)}:R>`},
+          //{name: 'Latence API', value: `\`\`\`${client.ws.ping}ms\`\`\``, inline: true},
+          //{name: 'Latence BOT', value: `\`\`\`${tryEco.createdTimestamp - interaction.createdTimestamp}ms\`\`\``, inline: true},
+      )
         .setTimestamp()
         .setFooter({ text: message.author.username, iconURL: message.author.displayAvatarURL() })
 

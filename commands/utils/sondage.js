@@ -9,6 +9,8 @@ module.exports = {
     examples: ['sondage', 'sondage Live se soir ? ou /sondage [titre] Live se soir ? [contenu] oui ou non'],
     description: 'Poster votre propre sondage!',
     async run(client, message, args) {
+                                                          //ID Channel
+        const SondageChannel = client.channels.cache.get('976983656474243092');
         if (message.author.bot) return;
         if (!args[0]) return message.reply("Merci d'entrer une question pour votre sondage!");
 
@@ -20,7 +22,7 @@ module.exports = {
         )
         .setDescription(args.slice(0).join(', '))
         .setTimestamp()
-        .setFooter({ text: `Sondage généré par ${message.author.tag}!` });
+        .setFooter({ text: `Sondage généré par ${message.author.tag}!`, iconURL: message.author.displayAvatarURL() });
 
         const sondage = await message.reply({ embeds: [embed] });
         sondage.react(`👍`);
@@ -41,6 +43,8 @@ module.exports = {
         },
     ],
     async runInteraction(client, interaction) {
+                                                          //ID Channel
+        const testChannel = client.channels.cache.get('976983656474243092');
         const pollTilte = interaction.options.getString('title');
         const pollContent = interaction.options.getString('content');
 
@@ -52,7 +56,7 @@ module.exports = {
         )
         .setDescription(pollContent)
         .setTimestamp()
-        .setFooter({ text: `Nouveau sondage généré par ${interaction.user.tag}!`});
+        .setFooter({ text: `Nouveau sondage généré par ${interaction.user.tag}!` });
 
         const sondage = await interaction.reply({embeds: [embed], fetchReply: true});
         sondage.react(`👍`);

@@ -20,7 +20,7 @@ module.exports = {
                                                            //ID Serveur
         //const devGuild = await client.guilds.cache.get('817431077387370507');
         //devGuild.commands.set([]);
-        await interaction.reply('Bot relancé avec succès!');
+        await interaction.reply({ content: 'Bot relancé avec succès!', ephemeral: true });
         return process.exit();
     }
 };
